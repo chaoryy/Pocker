@@ -1,16 +1,24 @@
 package models;
 
 public class Card {
-    private Rank rank;
-    private Suit suit;
+    private final Rank rank;
+    private final Suit suit;
 
     @Override
     public String toString() {
-        return rank.getName() + suit.getName();
+        return rank.getName() + suit.getSymbol();
     }
 
     public Card(Rank rank, Suit suit) {
         this.rank = rank;
         this.suit = suit;
+    }
+
+    public Rank getRank() {
+        return rank;
+    }
+
+    public Suit getSuit() {
+        return suit;
     }
 }
