@@ -14,6 +14,14 @@ public class Card {
         this.suit = suit;
     }
 
+    @Override
+    public boolean equals(Object o){
+        if(this == o) return true;
+        if (!(o instanceof Card other)) return false;
+        return rank == other.rank && suit == other.suit;
+
+    }
+
     public Rank getRank() {
         return rank;
     }

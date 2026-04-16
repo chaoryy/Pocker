@@ -5,9 +5,9 @@ import java.util.Collections;
 import java.util.List;
 
 public class Deck {
-    private List<Card> cards;
+    private final List<Card> cards;
 
-    public Deck(List<Card> cards) {
+    public Deck() {
         this.cards = new ArrayList<>(52);
         createCards();
     }
@@ -26,17 +26,15 @@ public class Deck {
 
     public Card drawCard() {
         Card card = cards.getFirst();
-        cards.set(0, null);
-        for(int i = 1; i < cards.size(); i++) {
-            cards.set(i - 1, cards.get(i));
-        }
+        cards.removeFirst();
         return card;
     }
 
     public void returnCard(Card card) {
         if (cards.contains(card)){
             System.out.println("Карта уже есть в колоде");
+            return;
         }
-        cards.set(cards.size(), card);
+        cards.add(card);
     }
 }
