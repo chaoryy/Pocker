@@ -9,7 +9,7 @@ import java.util.*;
 public class HandEvaluator {
     public HandRank evaluate(Hand hand) {
         List<Card> cards = new ArrayList<>(hand.getHand());
-        cards.sort((c1, c2) -> Integer.compare(c1.getRank().getValue(), c2.getRank().getValue()));
+        cards.sort(Comparator.comparingInt(c -> c.getRank().getValue()));
 
         boolean isFlush = checkFlush(cards);
         boolean isStraight = checkStraight(cards);
