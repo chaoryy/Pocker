@@ -12,11 +12,11 @@ public class Hand {
 
     public void addCard(Card card) {
         if(card == null) {
-            System.out.println("Нельзя добавить пустую карту");
+            System.out.println("Can not add empty card");
             return;
         }
         if(hand.size() >= 5){
-            System.out.println("Рука полная");
+            System.out.println("Hand is full");
             return;
         }
         hand.add(card);
@@ -24,30 +24,29 @@ public class Hand {
 
     public void replaceCard(int position, Card newCard) {
         if(newCard == null) {
-            System.out.println("Новая карта не может быть пустой");
+            System.out.println("New card can not be empty");
             return;
         }
         if(position>=0 && position < hand.size()) {
             hand.set(position, newCard);
-        } else {
-            System.out.println("Не верная позиция:" + position);
         }
     }
 
     public void showHand() {
         if(hand.isEmpty()) {
-            System.out.println("Нет карт");
+            System.out.println("No cards");
             return;
         }
+        System.out.println("Your cards: ");
         System.out.println("╔═══════╦═══════╦═══════╦═══════╦═══════╗");
         System.out.print("║");
         for(int i = 0; i < hand.size(); i++) {
-            System.out.print(("  " + (i+1) + "  " + "║"));
+            System.out.print(("   " + (i+1) + "   " + "║"));
         }
         System.out.println();
         System.out.print("║");
         for (Card card : hand) {
-            System.out.print(("  " + card + "  " + "║"));
+            System.out.print(("   " + card + "  " + "║"));
         }
         System.out.println();
         System.out.println("╚═══════╩═══════╩═══════╩═══════╩═══════╝");

@@ -5,7 +5,7 @@ public enum Rank {
     KING("K", 13),
     QUEEN("Q", 12),
     JACK("J", 11),
-    TEN("10", 10),
+    TEN("T", 10),
     NINE("9", 9),
     EIGHT("8", 8),
     SEVEN("7", 7),
